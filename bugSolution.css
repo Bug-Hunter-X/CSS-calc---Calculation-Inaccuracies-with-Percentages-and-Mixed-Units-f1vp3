@@ -1,0 +1,22 @@
+To mitigate the `calc()` issues, use explicit width definitions for parent containers to ensure accurate percentage calculations. Ensure consistent units within the `calc()` expression, preferably using pixels for precise control. If percentages must be combined with other units, be aware of the order of operations and the potential for browser inconsistencies.
+
+Here's a corrected example: 
+
+```css
+.parent {
+  width: 500px; /* Explicit width for accurate percentage calculation */
+}
+
+.child {
+  width: calc(50% - 10px);
+}
+```
+
+In cases with mixed units, careful consideration must be given: 
+```css
+.element {
+  height: calc(100% + 20px); /* Consistent use of pixels */
+}
+```
+
+Avoid mixing different units without a clear understanding of the calculation order and potential inconsistencies between browsers. Prioritize clear, explicit values and consistent units for better predictability.
