@@ -1,0 +1,3 @@
+The CSS property `calc()` is used to perform calculations within CSS. However, there's a subtle but significant issue when using `calc()` with percentage values and units other than pixels.  For instance, the calculation `width: calc(50% - 10px);` might not behave as expected if the parent element's width isn't explicitly set.  The browser might calculate 50% of the parent's width *before* subtracting the 10px, leading to inaccurate results.
+
+Another issue can happen when combining different units inside `calc()`.  Inconsistent usage of units can lead to unexpected behavior or errors. For example: `height: calc(100% + 2em);` may produce inconsistent results across browsers if not carefully managed, as the interpretation of `em` depends on the parent's font-size.
